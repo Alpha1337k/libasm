@@ -6,7 +6,7 @@
 /*   By: alpha <alpha@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/04 17:43:11 by alpha         #+#    #+#                 */
-/*   Updated: 2020/10/05 14:49:30 by okruitho      ########   odam.nl         */
+/*   Updated: 2020/10/05 16:12:23 by okruitho      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,7 @@ int main(void)
 	cpytest();
 	// duptest();
 	writetest();
-	char *a = ft_strdup(NULL);
+	char *a = ft_strdup("Je moeder");
 	printf("%s\n", a);
 	// readtest();
 	return (1);
