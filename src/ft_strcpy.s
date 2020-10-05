@@ -10,11 +10,11 @@ _increment:
 	inc		RAX					; i++
 
 _loop:
-	mov		BYTE[RDI + RAX]	, DL
-	mov		DL	, BYTE[RSI + RAX]
+	mov		DL	, BYTE[RSI + RAX]	;
+	mov		BYTE[RDI + RAX], DL
 	cmp		DL	, 0
 	jnz		_increment
 
 _return:
-    mov     rax, rsi            ; set the return pointer to the dest pointer
+    mov     rax, rdi            ; set the return pointer to the dest pointer
 	ret							; return rax

@@ -6,7 +6,14 @@
 ;    By: alpha <alpha@student.codam.nl>               +#+                      ;
 ;                                                    +#+                       ;
 ;    Created: 2020/09/27 03:11:41 by alpha         #+#    #+#                  ;
-;    Updated: 2020/09/27 03:11:42 by alpha         ########   odam.nl          ;
+;    Updated: 2020/10/05 13:08:46 by okruitho      ########   odam.nl          ;
 ;                                                                              ;
 ; **************************************************************************** ;
 
+section .text
+    global _ft_read
+
+_ft_read:
+    mov rax, 0x2000003
+    syscall
+    ret

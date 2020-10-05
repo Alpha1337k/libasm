@@ -6,7 +6,7 @@
 #    By: alpha <alpha@student.codam.nl>               +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/09/27 02:59:48 by alpha         #+#    #+#                  #
-#    Updated: 2020/10/04 17:45:57 by alpha         ########   odam.nl          #
+#    Updated: 2020/10/05 14:10:34 by okruitho      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = libasm.a
 
 TEST = test
 
-NASM = nasm -f elf64
+NASM = nasm -f macho64
 
 SRC = src/ft_strcmp.s	\
 	src/ft_strcpy.s	\
@@ -34,7 +34,7 @@ $(NAME):
 	ar rcs $(NAME) $(OBJ)
 
 test: re all
-	gcc -o libasm-test test.c $(NAME)
+	gcc -o libasm-test test.c -L. -lasm
 
 clean:
 	rm -rf $(OBJ)

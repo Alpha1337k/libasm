@@ -10,22 +10,19 @@ _increment:
 		inc RAX
 
 _loop:
-		mov BYTE[rdi + RAX], DL
-		cmp DL, 0
-		je  _return_calc
-		sub DL, BYTE[rsi + RAX]
-		cmp DL, 0
-		jne	_return_switch
-		jmp _increment
-
-_return_calc:
-		sub Dl, BYTE[rsi + RAX]
+	mov	DL	, BYTE[RDI + RAX]
+	cmp DL	, 0
+	je	_return_switch
+	cmp BYTE[RSI + RAX] , 0
+	je	_return_switch
+	cmp BYTE[RSI + RAX]	, DL
+	je _increment
 
 _return_switch:
-		cmp DL, 0
-		ja	_return_pos
-		js	_return_neg
-		jmp	_return_zer
+	cmp DL	, BYTE[RSI + RAX]
+	ja _return_pos
+	je _return_zer
+	js _return_neg
 
 _return_pos:
 		mov RAX, 1
