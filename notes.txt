@@ -1,2 +1,0 @@
-RAX = rval
-%rdi, %rsi, %rdx, %rcx,

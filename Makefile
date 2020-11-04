@@ -6,13 +6,13 @@
 #    By: alpha <alpha@student.codam.nl>               +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/09/27 02:59:48 by alpha         #+#    #+#                  #
-#    Updated: 2020/10/05 14:10:34 by okruitho      ########   odam.nl          #
+#    Updated: 2020/10/06 14:18:32 by okruitho      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libasm.a
 
-TEST = test
+TEST = libasm-test
 
 NASM = nasm -f macho64
 
@@ -37,9 +37,9 @@ test: re all
 	gcc -o libasm-test test.c -L. -lasm
 
 clean:
-	rm -rf $(OBJ)
+	rm -rf $(OBJ) test.txt
 
 fclean: clean
-	rm -rf $(NAME)
+	rm -rf $(NAME) $(TEST)
 
 re: fclean all
